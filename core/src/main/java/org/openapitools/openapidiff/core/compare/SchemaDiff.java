@@ -344,6 +344,7 @@ public class SchemaDiff {
     // SchemaDiffResult and
     // return the object
     if ((left == null || right == null)
+        || !Objects.equals(left.getClass(), right.getClass())
         || !Objects.equals(left.getType(), right.getType())
         || !Objects.equals(left.getFormat(), right.getFormat())) {
       return getTypeChangedSchema(left, right, context);
